@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-beige-50 text-gray-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-container {
+    @apply container-padding py-6 max-w-7xl mx-auto;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-soft-lg hover:-translate-y-1 cursor-pointer;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-50 via-lavender-50 to-beige-50;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-lavender-600;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
