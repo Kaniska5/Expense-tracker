@@ -42,14 +42,20 @@ export interface Goal {
 export interface UserSettings {
   userId: string;
   currency: string;
+
+  // ✅ Optional so old backend data doesn't crash app
+  monthlyIncome?: number;
+
   weekStart: 'monday' | 'sunday';
   monthStart: number; // 1-28
   theme: 'light' | 'dark' | 'pastel';
+
   notifications: {
     budgetAlerts: boolean;
     goalMilestones: boolean;
     weeklyReport: boolean;
   };
+
   categories: ExpenseCategory[];
 }
 

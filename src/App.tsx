@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthStore } from '@/store/useAuthStore';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
 import { Layout } from '@/components/layout/Layout';
@@ -34,93 +34,100 @@ function App() {
   }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Dashboard />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/add-expense"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <AddExpense />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/transactions"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Transactions />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/analytics"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Analytics />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/budgets"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Budgets />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/goals"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Goals />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/reports"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Reports />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <Settings />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Dashboard />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/add-expense"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <AddExpense />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/transactions"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Transactions />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/analytics"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Analytics />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/budgets"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Budgets />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/goals"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Goals />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/reports"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Reports />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/settings"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <Settings />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
